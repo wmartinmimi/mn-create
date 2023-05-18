@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ -z "$@" ]; then
+  curl https://launch.micronaut.io
+  echo
+  echo "extras:"
+  echo "\$1: name"
+  echo "\$2: type"
+  echo "\$3: everything else"
+else
+  name=$1
+  if [ -z "$2" ]; then
+    type="DEFAULT"
+  else
+    type=$2
+  fi
+  args="$3"
+
+  tmpl=`mktemp`
+
+  echo "downloading template..."
+  curl "https://launch.micronaut.io/create/$type/$name?$args" -o $tmpl --progress-bar
+  echo "unzipping files..."
+  mkdir $name
+  unzip -q $tmpl
+  echo "cleaning up..."
+  rm $tmpl
+  echo "done!"
+fi
