@@ -2,6 +2,8 @@
 
 A helper script to call [launch.micronaut.io](launch.micronaut.io).
 
+Not affiliated with micronaut.
+
 ## How to use
 
 ### New project
