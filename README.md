@@ -22,3 +22,7 @@ mn-create name type args
 ```sh
 mn-create
 ```
+
+## License
+
+Licensed under [Apache-2.0 license](https://github.com/wmartinmimi/mn-create/blob/main/LICENSE.md)
